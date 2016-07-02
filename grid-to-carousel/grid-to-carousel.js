@@ -10,20 +10,18 @@
             
             var defaults = {
                     //onComplete: function() {}
-                    
+                    carouselInterval: false
                 },
                 settings = $.extend({}, defaults, options),
-                container = $(this);
-            
-            var grid = container.find('.grid'),
+                
+                container = $(this),
+                grid = container.find('.grid'),
                 contents = grid.find('.content'),
                 carousel = container.find('.carousel'),
                 closeButtons = carousel.find('.close-btn');
                 
-            console.log(grid);
-                
             carousel.carousel({
-                interval: false
+                interval: settings.carouselInterval
             })
             
             $.each(contents, function(key) {
@@ -128,8 +126,6 @@
                         }, 400);
                     });
             });
-            
-            
 
         });
     };
